@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+	<base href='/'>
+	<title>My Journal</title>
+
+<!-- Jquery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+
+<!-- Angular -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
+
+<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+
+<!-- Bower -->
+<script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+
+<!-- CSS -->
+<link rel="stylesheet" href="/assets/styles.css" />
+
+</head>
+
+<header>
+<div class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="/" class="navbar-brand"><span class="glyphicon glyphicon-book"></span></a>
+			</div>
+      
+		 	<ul class="nav navbar-nav navbar-right">
+			    <li ng-if="!loggedIn" ><a href="/login">JournalSwift</a></li>
+		      	<li ng-if="loggedIn"><a href="#">Welcome {{user.name}} </a></li>
+				<li ng-if="!loggedIn"><a href="/signup">Signup</a></li>
+				<li ng-if="!loggedIn"><a href="/about">About</a></li>
+				<li ng-if="loggedIn"><a href="/homeuser">Compose</a></li>
+				<li ng-if="loggedIn"><a href="/pastEntries">Past Entries</a></li>
+
+		        <li class="dropdown" ng-if="loggedIn">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="/about">About</a></li>	        
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#" ng-click="doLogout()">Logout</a></li>       
+			          </ul>
+		        </li>
+		    </ul>
+ 		</div>
+</header>
+   
+	<body ng-controller="mainCtrl">
+
+		<main class="container">
+			<div ng-view></div>
+		</main>
+
+<!-- JavaScript Files -->
+
+<script type="text/javascript" src="app/app.js"></script>
+
+<!-- Services -->
+<script type="text/javascript" src="app/services/authService.js"></script>
+<script type="text/javascript" src="app/services/userService.js"></script>
+<script type="text/javascript" src="app/services/storyService.js"></script>
+
+
+<!-- Controllers -->
+<script type="text/javascript" src="app/controllers/mainCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/userCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/storyCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/pastEntriesCtrl.js"></script>
+
+	</body>
+</html>

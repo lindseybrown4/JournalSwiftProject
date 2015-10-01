@@ -1,0 +1,32 @@
+<html>
+	<body>
+		<div class="panel panel-success">
+			<div class="panel-heading">Your Entries</div>
+				<div class="panel-body" "todaysEntry" ng-repeat="each in vm.stories">
+					<div class="todaysEntry">	
+						<p><h3>{{each.created | date}}</h3>
+
+						<div>
+						<a href="#"><span ng-click="toggleEditing(index)" class="glyphicon glyphicon-pencil"></span></a>
+						<a href="#"><span ng-click="deleteEntry($index)" class="glyphicon glyphicon-trash"><a href="#"></span></a>		
+						</div>
+
+							<div class="col-sm-12" ng-show="editing">
+								<form>
+			           				 <textarea class="form-control input-lg" rows="8" name="story" ng-model="newContent" placeholder="{{each.content}}"></textarea>
+
+			           				 <button ng-click="editEntry($index, newContent)">Submit Edits</button>
+			           			</form>
+		    				</div>
+		    				<div ng-show="!editing">
+							<p><h5 style="white-space:pre-line">{{each.content}}</h5></p>	
+								<div class="border"></div>
+							</div>
+		       		</div>
+		       </div>
+	</body>
+</html>		       
+
+
+
+

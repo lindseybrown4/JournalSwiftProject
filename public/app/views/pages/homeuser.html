@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div class="rowone">
+			<div class="col-md-3"></div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="panel panel-primary">
+						<div class="panel-heading">Today's Journal Entry
+					</div>	
+					<div class="panel-body">
+						<div><p class="form-control input-lg cupcake" ng-hide="!story" rows="8" name="story">{{vm.storyData.content}}</p></div>						
+						<form class="form-entry" method="post" ng-submit="vm.createStory()" ng-hide="story">
+							<div class="form-group">
+			        			<div class="col-sm-12">
+			           				 <textarea class="form-control input-lg" rows="8" name="story" ng-model="vm.storyData.content" placeholder="Write here..." required>></textarea>
+			        			</div>
+			    			</div>
+						    	<div>
+						    		<button type="submit" class="btn btn-success" ng-click="story = true">Submit</button>
+						    	</div>
+			    		</form>
+					</div>		    
+			</div>
+		</div> 	
+	</body>
+</html>
+
+
+	

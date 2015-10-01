@@ -1,0 +1,68 @@
+ html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    }
+
+
+/*.bootstrap-datetimepicker-widget {
+	color: #000;
+
+}*/
+
+.col-md-8 {
+word-wrap: break-word;
+
+}
+
+
+.border {
+	border-bottom: 1px solid green;
+
+}
+.todaysEntry {
+	padding: 10px;
+	text-align: center;
+	height: auto;
+}
+
+.button, .btn, .btn-success {
+
+	margin-top: 15px; 
+	margin-right: 15px;
+	float: right;
+}
+
+
+.cupcake {
+	height: 100%;
+	white-space: pre-line;
+
+}
+
+video#bgvid {
+position: fixed;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -100;
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
+background: url(polina.jpg) no-repeat;
+background-size: cover;
+}
+
+@media screen and (max-device-width: 1080px) {
+  
+body { 
+  background: url(polina.jpg) #000 no-repeat center center fixed; 
+}
+#bgvid { 
+  display: none; 
+
+}
+*/
